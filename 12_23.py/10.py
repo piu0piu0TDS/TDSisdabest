@@ -2,9 +2,9 @@ import pygame
 
 # 1. 게임 초기화
 pygame.init()
-  
+
 # 2. 게임창 옵션 설정
-size = [400, 900]
+size = [400, 700]
 screen = pygame.display.set_mode(size)
 
 title = "My Game"
@@ -13,8 +13,12 @@ pygame.display.set_caption(title)
 # 3. 게임 내 필요한 설정
 clock = pygame.time.Clock()
 
-ss = pygame.image.load("D:/temp/ss.png").convert_alpha()
-ss = pygame.transform.scale(ss, (50,80))
+ss = pygame.image.load("C:/Users/BuldangLC-S01/Downloads/whatthehack.png").convert_alpha()
+ss = pygame.transform.scale(ss, (50, 80))
+ss_sx, ss_sy = ss.get_size()
+ss_x = round(size[0]/2 - ss_sx/2) 
+ss_y = size[1] -ss_sy - 5  
+
 
 black = (0,0,0)
 white = (255,255,255)
@@ -37,11 +41,10 @@ while SB == 0:
 
     # 4-4. 그리기
     screen.fill(black)
-    screen.blit(ss, (0,0))
 
     # 4-5. 업데이트
     pygame.display.flip()
-    
+    screen.blit(ss, (ss_x, ss_y))
     
 # 5. 게임 종료
 pygame.quit
