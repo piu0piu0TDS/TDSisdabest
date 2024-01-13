@@ -37,6 +37,7 @@ while SB == 0:
 
     # 4-4. 그리기
     screen.fill(black)
+    screen.blit(ss, (0,0))
 
     # 4-5. 업데이트
     pygame.display.flip()
